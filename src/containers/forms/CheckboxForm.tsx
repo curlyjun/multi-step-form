@@ -3,14 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Checkbox from '../../components/Checkbox';
 import { useDispatch } from 'react-redux';
 import { INCREASE_STEP } from '../../reducers/step';
-import { Item } from '../../types';
 import { SUBMIT_FORM } from '../../reducers/input';
+import { FormProps } from '../../types';
 
-interface Props {
-  item: Item;
-}
-
-const CheckboxForm: React.FC<Props> = ({ item }) => {
+const CheckboxForm: React.FC<FormProps> = ({ item }) => {
   const dispatch = useDispatch();
   const [checkItems, setCheckItems] = useState(new Map());
 
@@ -59,6 +55,7 @@ const CheckboxForm: React.FC<Props> = ({ item }) => {
 
   return (
     <form onSubmit={onSubmit}>
+      <h2>{item.title}</h2>
       {item.options.map(option => (
         <>
           <Checkbox
