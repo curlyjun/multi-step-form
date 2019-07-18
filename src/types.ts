@@ -16,6 +16,10 @@ export interface Item {
   answer?: string[];
 }
 
+export interface FormProps {
+  item: Item;
+}
+
 export interface Input {
   formId: number;
   title: string;
