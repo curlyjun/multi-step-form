@@ -20,7 +20,11 @@ type ActionTypes = loadInputFileAction | submitFormAction;
 const initialState: Input = {
   formId: 0,
   title: '',
-  items: [{ itemId: 0, title: '', formType: 1, options: [] }],
+  items: [
+    { itemId: 0, title: '', formType: 1, options: [] },
+    { itemId: 0, title: '', formType: 1, options: [] },
+    { itemId: 0, title: '', formType: 1, options: [] },
+  ],
 };
 
 export default (state = initialState, action: ActionTypes) => {

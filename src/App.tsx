@@ -44,9 +44,9 @@ const App: React.FC = () => {
         <h1>{title}</h1>
       </header>
       <div>
-        <h2>{items[step - 1].title}</h2>
         <MultiStepForm items={items} />
       </div>
+      <div>{`${step} / ${items.length}`}</div>
       <button onClick={onPrevious}> 뒤로</button>
       <button onClick={onNext}> 다음</button>
     </div>

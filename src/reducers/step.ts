@@ -10,7 +10,7 @@ interface DecreaseStepAction {
 
 type ActionTypes = IncreaseStepAction | DecreaseStepAction;
 
-export default (state = 1, action: ActionTypes) => {
+export default (state = 3, action: ActionTypes) => {
   switch (action.type) {
     case INCREASE_STEP:
       return state + 1;

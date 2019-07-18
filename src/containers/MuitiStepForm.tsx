@@ -17,7 +17,7 @@ const MuitiStepForm: React.FC<Props> = ({ items }) => {
     case RADIO:
       return <RadioForm item={items[step - 1]} />;
     case TEXTINPUT:
-      return <TextInputForm />;
+      return <TextInputForm item={items[step - 1]} />;
     case SELECTBOX:
       return <SelectboxForm />;
     default:
