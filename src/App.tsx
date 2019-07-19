@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useCallback } from 'react';
+import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import input from './assets/input.json';
-import MultiStepForm from './containers/MuitiStepForm';
+import SelectFormType from './containers/SelectFormType';
 import { State, Input } from './types';
 import { INCREASE_STEP, DECREASE_STEP } from './reducers/step';
 import { LOAD_INPUT_FILE } from './reducers/input';
@@ -44,11 +45,18 @@ const App: React.FC = () => {
         <h1>{title}</h1>
       </header>
       <div>
-        <MultiStepForm items={items} />
+        {step > items.length ? (
+          <div>수고</div>
+        ) : (
+          <>
+            <SelectFormType items={items} />
+            <div>{`${step} / ${items.length}`}</div>
+          </>
+        )}
+
+        <button onClick={onPrevious}> 뒤로</button>
+        <button onClick={onNext}> 다음</button>
       </div>
-      <div>{`${step} / ${items.length}`}</div>
-      <button onClick={onPrevious}> 뒤로</button>
-      <button onClick={onNext}> 다음</button>
     </div>
   );
 };

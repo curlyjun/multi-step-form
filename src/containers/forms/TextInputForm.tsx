@@ -17,9 +17,7 @@ const TextInputForm: React.FC<FormProps> = ({ item }) => {
   }, []);
 
   const onChangeTextInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    console.log(e.target.value);
     setText(e.target.value);
-    console.log([e.target.value]);
   };
 
   const onSubmit = (e: React.FormEvent) => {
