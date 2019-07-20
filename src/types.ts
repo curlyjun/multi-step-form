@@ -13,20 +13,25 @@ export interface Item {
     id: number;
     text: string;
   }[];
-  answer?: string[];
 }
 
-export interface FormProps {
-  item: Item;
+// export interface Input {
+//   formId: number;
+//   title: string;
+//   items: Item[];
+// }
+
+export interface ResultItem {
+  id: number;
+  answer: string[];
 }
 
-export interface Input {
-  formId: number;
-  title: string;
-  items: Item[];
+export interface ResultState {
+  id: number;
+  items: ResultItem[];
 }
 
 export interface State {
   step: number;
-  input: Input;
+  result: ResultState;
 }

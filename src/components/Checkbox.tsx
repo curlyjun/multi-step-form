@@ -7,8 +7,6 @@ interface Props {
 }
 
 const Checkbox: React.FC<Props> = ({ name, checked, onChange }) => {
-  console.log(name);
-  console.log(checked);
   return (
     <>
       <input
@@ -17,6 +15,7 @@ const Checkbox: React.FC<Props> = ({ name, checked, onChange }) => {
         checked={checked}
         onChange={onChange}
       />
+      {name}
     </>
   );
 };

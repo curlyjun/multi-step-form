@@ -1,26 +1,22 @@
 import React from 'react';
-import { CheckboxForm, RadioForm, TextInputForm, SelectboxForm } from './forms';
+import { CheckboxItem, RadioItem, TextInputItem, SelectboxItem } from './items';
 import { useSelector } from 'react-redux';
-import { Item, formType } from '../types';
+import { Item, formType, State } from '../types';
 
 const { CHECKBOX, RADIO, TEXTINPUT, SELECTBOX } = formType;
 
-interface Props {
-  items: Item[];
-}
-const SelectFormType: React.FC<Props> = ({ items }) => {
-  const { step } = useSelector((state: { step: number }) => state);
-
+const SelectFormType: React.FC<{ items: any }> = ({ items }) => {
+  const { step } = useSelector((state: State) => state);
   if (items.length) {
     switch (items[step - 1].formType) {
       case CHECKBOX:
-        return <CheckboxForm item={items[step - 1]} />;
+        return <CheckboxItem item={items[step - 1]} />;
       case RADIO:
-        return <RadioForm item={items[step - 1]} />;
+        return <RadioItem item={items[step - 1]} />;
       case TEXTINPUT:
-        return <TextInputForm item={items[step - 1]} />;
+        return <TextInputItem item={items[step - 1]} />;
       case SELECTBOX:
-        return <SelectboxForm item={items[step - 1]} />;
+        return <SelectboxItem item={items[step - 1]} />;
       default:
         return (
           <>

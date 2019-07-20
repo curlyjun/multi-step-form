@@ -3,59 +3,35 @@ import React, { useEffect, useCallback } from 'react';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import input from './assets/input.json';
-import SelectFormType from './containers/SelectFormType';
-import { State, Input } from './types';
-import { INCREASE_STEP, DECREASE_STEP } from './reducers/step';
-import { LOAD_INPUT_FILE } from './reducers/input';
+import { State } from './types';
+// import { LOAD_INPUT_FILE } from './reducers/input';
+import MultiStepForm from './containers/MutiStepForm';
+import { INITIAL_ITEMS } from './reducers/result';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-
-  // componentDidMount
+  const { step } = useSelector((state: State) => state);
   useEffect(() => {
-    const _input: Input = {
-      ...input,
-    };
-    _input.items.map(item => (item.answer = []));
-    console.log(_input);
     dispatch({
-      type: LOAD_INPUT_FILE,
-      data: _input,
+      type: INITIAL_ITEMS,
+      data: {
+        formId: input.formId,
+        itemsLength: input.items.length,
+      },
     });
   }, []);
-
-  const { step } = useSelector((state: State) => state);
-  const { items, title } = useSelector((state: State) => state.input);
-
-  const onPrevious = useCallback(() => {
-    dispatch({
-      type: DECREASE_STEP,
-    });
-  }, [dispatch]);
-
-  const onNext = useCallback(() => {
-    dispatch({
-      type: INCREASE_STEP,
-    });
-  }, [dispatch]);
 
   return (
     <div className="App">
       <header>
-        <h1>{title}</h1>
+        <h1>{input.title}</h1>
       </header>
       <div>
-        {step > items.length ? (
+        {step > input.items.length ? (
           <div>수고</div>
         ) : (
-          <>
-            <SelectFormType items={items} />
-            <div>{`${step} / ${items.length}`}</div>
-          </>
+          <MultiStepForm items={input.items} />
         )}
-
-        <button onClick={onPrevious}> 뒤로</button>
-        <button onClick={onNext}> 다음</button>
       </div>
     </div>
   );
