@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-  value: string;
+  value: string | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

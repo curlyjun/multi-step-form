@@ -22,7 +22,7 @@ const TextInputForm: React.FC<{ item: Item }> = ({ item }) => {
 
   return (
     <TextInput
-      value={items[step - 1] ? items[step - 1].answer[0] : ''}
+      value={items[step - 1].answer[0] ? items[step - 1].answer[0] : ''}
       onChange={onChangeTextInput}
     />
   );
