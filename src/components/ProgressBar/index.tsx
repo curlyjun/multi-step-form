@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import './ProgressBar.css';
 
 interface Props {
   currentStep: number;
@@ -7,8 +8,10 @@ interface Props {
 
 const ProgressBar: React.SFC<Props> = ({ currentStep, length }) => {
   const persentage = currentStep ? (currentStep / length) * 100 : 1;
+
   return (
     <>
+      <div>{`${currentStep} / ${length}`}</div>
       <div className="progress-bar">
         <div
           style={{
@@ -20,4 +23,4 @@ const ProgressBar: React.SFC<Props> = ({ currentStep, length }) => {
   );
 };
 
-export default ProgressBar;
+export default memo(ProgressBar);

@@ -15,12 +15,6 @@ export interface Item {
   }[];
 }
 
-// export interface Input {
-//   formId: number;
-//   title: string;
-//   items: Item[];
-// }
-
 export interface ResultItem {
   id: number;
   answer: string[];

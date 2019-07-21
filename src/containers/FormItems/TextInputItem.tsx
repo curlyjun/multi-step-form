@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useCallback } from 'react';
 import TextInput from '../../components/TextInput';
 import { useDispatch, useSelector } from 'react-redux';
 import { Item, State } from '../../types';
@@ -10,15 +10,18 @@ const TextInputForm: React.FC<{ item: Item }> = ({ item }) => {
   const { items } = useSelector((state: State) => state.result);
   const { step } = useSelector((state: State) => state);
 
-  const onChangeTextInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: ADD_ANSWER,
-      data: {
-        itemId: item.itemId,
-        answer: [e.target.value],
-      },
-    });
-  };
+  const onChangeTextInput = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch({
+        type: ADD_ANSWER,
+        data: {
+          itemId: item.itemId,
+          answer: [e.target.value],
+        },
+      });
+    },
+    [dispatch],
+  );
 
   return (
     <TextInput

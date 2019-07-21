@@ -1,0 +1,43 @@
+button {
+  outline: 0;
+  height: 3rem;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button-next {
+  background: rgb(0, 199, 174);
+  border-radius: 3px;
+  color: white;
+}
+
+.button-next:hover {
+  border-color: #009481;
+}
+
+.button-previous {
+  color: rgb(0, 199, 174);
+  border: 1px solide #ccc;
+  background: white;
+  border-radius: 3px;
+}
+
+.button-previous:hover {
+  border-color: rgb(172, 172, 172);
+}
+
+
+.button-submit {
+  border-radius: 3px;
+  background: rgb(0, 124, 206);
+  color: white;
+}
+
+.button-submit:hover {
+  border-color: rgb(12, 0, 77);
+}

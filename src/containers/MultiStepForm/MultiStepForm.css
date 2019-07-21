@@ -1,0 +1,31 @@
+.form-container {
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.form-container h2 {
+  margin: 0 0 64px 0;
+  color: #3e3e3e;
+}
+
+.form-container li {
+  list-style: none;
+  padding: 15px 25px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.form-container li:last-child {
+  border-bottom: 0px;
+}
+
+.form-container ul {
+  padding: 0px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}

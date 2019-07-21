@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { INCREASE_STEP } from '../reducers/step';
+import './IntroPage.css';
+
+import { INCREASE_STEP } from '../../reducers/step';
+import NextButton from '../../components/Buttons/NextButton';
 
 interface Props {
   title: string;
 }
 
-const InitPage: React.FC<Props> = ({ title }) => {
+const IntroPage: React.FC<Props> = ({ title }) => {
   const dispatch = useDispatch();
-  const onClick = () => {
+
+  const onClick = useCallback(() => {
     dispatch({
       type: INCREASE_STEP,
     });
-  };
+  }, [dispatch]);
+
   return (
     <div className="grid-container">
       <div className="col1" />
@@ -24,13 +29,11 @@ const InitPage: React.FC<Props> = ({ title }) => {
           <span className="intro-subtitle">몇가지 질문에 대답해주세요!</span>
         </article>
         <div className="intro-button-container">
-          <button onClick={onClick} className="button-next">
-            다음
-          </button>
+          <NextButton onClick={onClick} />
         </div>
       </div>
     </div>
   );
 };
 
-export default InitPage;
+export default IntroPage;

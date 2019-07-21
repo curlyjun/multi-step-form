@@ -6,9 +6,9 @@ import './App.css';
 import input from './assets/input.json';
 import { State } from './types';
 import MultiStepForm from './containers/MultiStepForm';
-import { INITIAL_ITEMS } from './reducers/result';
+import IntroPage from './containers/IntroPage';
 import CompletedPage from './components/CompletedPage';
-import InitPage from './containers/InitPage';
+import { INITIAL_ITEMS } from './reducers/result';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -23,8 +23,9 @@ const App: React.FC = () => {
       },
     });
   }, []);
+
   if (step === 0) {
-    return <InitPage title={input.title} />;
+    return <IntroPage title={input.title} />;
   } else if (step > input.items.length) {
     return <CompletedPage />;
   } else {

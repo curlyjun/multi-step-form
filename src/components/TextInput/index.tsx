@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import './TextInput.css';
 
 interface Props {
   value: string | undefined;
@@ -18,4 +19,4 @@ const TextInput: React.SFC<Props> = ({ value, onChange }) => {
   );
 };
 
-export default TextInput;
+export default memo(TextInput);

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Checkbox from '../../components/Checkbox';
 import { useDispatch, useSelector } from 'react-redux';
 import { Item, State } from '../../types';
@@ -22,30 +22,33 @@ const CheckboxItem: React.FC<{ item: Item }> = ({ item }) => {
     }
   }, []);
 
-  const onCheckboxChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.name;
-    const checked = e.target.checked;
-    await setCheckItems(prevCheckITems => {
-      prevCheckITems.set(value, checked);
-      return new Map(prevCheckITems);
-    });
-    const answer: string[] = [];
-    checkItems.forEach((isChecked, name) => {
-      if (isChecked) {
-        answer.push(name);
-      }
-    });
-    dispatch({
-      type: ADD_ANSWER,
-      data: {
-        itemId: item.itemId,
-        answer,
-      },
-    });
-  };
+  const onCheckboxChange = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.name;
+      const checked = e.target.checked;
+      await setCheckItems(prevCheckITems => {
+        prevCheckITems.set(value, checked);
+        return new Map(prevCheckITems);
+      });
+      const answer: string[] = [];
+      checkItems.forEach((isChecked, name) => {
+        if (isChecked) {
+          answer.push(name);
+        }
+      });
+      dispatch({
+        type: ADD_ANSWER,
+        data: {
+          itemId: item.itemId,
+          answer,
+        },
+      });
+    },
+    [dispatch, checkItems],
+  );
 
   return (
-    <ul>
+    <>
       {item.options.map(option => (
         <Checkbox
           key={`option.text${option.id}`}
@@ -54,7 +57,7 @@ const CheckboxItem: React.FC<{ item: Item }> = ({ item }) => {
           checked={checkItems.get(option.text) === true ? true : false}
         />
       ))}
-    </ul>
+    </>
   );
 };
 

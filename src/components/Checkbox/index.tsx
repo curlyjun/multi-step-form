@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import './Checkbox.css';
 
 interface Props {
   name: string;
@@ -21,4 +22,4 @@ const Checkbox: React.FC<Props> = ({ name, checked, onChange }) => {
   );
 };
 
-export default Checkbox;
+export default memo(Checkbox);

@@ -12,7 +12,7 @@ const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className="App">
+    <div className="container">
       <App />
     </div>
   </Provider>,

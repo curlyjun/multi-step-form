@@ -2,25 +2,10 @@ body {
   margin: 0;
 }
 
-.App {
+.container {
   height: 100vh;
   width: 600px;
   margin: 50px auto;
-}
-
-
-
-button {
-  outline: 0;
-  height: 3rem;
-  font-size: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-button:hover {
-  cursor: pointer;
-  border-color: #009481;
 }
 
 h1 {
@@ -40,14 +25,4 @@ h1 {
 
 .col2{
   padding: 30px;
-}
-
-.intro-button-container {
-  float: right;
-  padding-top: 200px;
-}
-
-.intro-subtitle {
-  font-size: 30px;
-  font-weight: 300;
 }

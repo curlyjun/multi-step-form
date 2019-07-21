@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import './Radio.css';
 
 interface Props {
   name: string;
@@ -21,4 +22,4 @@ const Radio: React.SFC<Props> = ({ name, onChange, selected }) => {
   );
 };
 
-export default Radio;
+export default memo(Radio);
