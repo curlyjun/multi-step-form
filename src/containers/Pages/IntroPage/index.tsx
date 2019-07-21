@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import './IntroPage.css';
 
-import { INCREASE_STEP } from '../../reducers/step';
-import NextButton from '../../components/Buttons/NextButton';
+import { INCREASE_STEP } from '../../../reducers/step';
+import NextButton from '../../../components/Buttons/NextButton';
 
 interface Props {
   title: string;

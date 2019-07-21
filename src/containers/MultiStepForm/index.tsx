@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './MultiStepForm.css';
 import { State, Item } from '../../types';
 
-import SelectFormType from '../../components/SelectFormType';
+import SelectFormType from '../SelectFormType';
 import { DECREASE_STEP, INCREASE_STEP } from '../../reducers/step';
 import ProgressBar from '../../components/ProgressBar';
 import {

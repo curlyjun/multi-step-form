@@ -25,7 +25,7 @@ const initialState: ResultState = {
 
 type ActionTypes = initialItemsActions | addAnswerActions;
 
-export default (state = initialState, action: ActionTypes) => {
+export default (state = initialState, action: ActionTypes): ResultState => {
   switch (action.type) {
     case INITIAL_ITEMS: {
       const newItems: ResultItem[] = [];

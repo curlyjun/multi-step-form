@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './CompletedPage.css';
 
-import { State } from '../../types';
+import { State } from '../../../types';
 
 const CompletedPage: React.FC<{}> = () => {
   const { result } = useSelector((state: State) => state);

@@ -6,8 +6,7 @@ import './App.css';
 import input from './assets/input.json';
 import { State } from './types';
 import MultiStepForm from './containers/MultiStepForm';
-import IntroPage from './containers/IntroPage';
-import CompletedPage from './components/CompletedPage';
+import { IntroPage, CompletedPage } from './containers/Pages';
 import { INITIAL_ITEMS } from './reducers/result';
 
 const App: React.FC = () => {

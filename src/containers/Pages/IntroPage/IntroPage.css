@@ -5,6 +5,13 @@
   padding-top: 200px;
 }
 
+@media (max-width: 969px) {
+  .intro-button-container {
+    float: none;
+    text-align: center;
+  }
+}
+
 .intro-subtitle {
   font-size: 30px;
   font-weight: 300;

@@ -6,7 +6,7 @@ import {
   RadioItem,
   TextInputItem,
   SelectboxItem,
-} from '../../containers/FormItems';
+} from '../FormItems';
 import { Item, formType, State } from '../../types';
 
 const { CHECKBOX, RADIO, TEXTINPUT, SELECTBOX } = formType;

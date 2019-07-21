@@ -19,10 +19,25 @@ h1 {
   height: 400px;
 }
 
-.col1{
+.col1 {
   background: #00c7ae;
 }
 
-.col2{
+.col2 {
   padding: 30px;
+}
+
+@media (max-width: 969px) {
+  .container{
+    width: 100%;
+  }
+  .grid-container{
+    display: inline;
+  }
+  .col1 {
+    height: 100px;
+  }
+  .col2 {
+    text-align: center;
+  }
 }
