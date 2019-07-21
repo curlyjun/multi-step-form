@@ -1,8 +1,53 @@
-.App {
-  height: 100vh;
-  text-align: center;
+body {
+  margin: 0;
 }
 
-header{
-  color: green;
+.App {
+  height: 100vh;
+  width: 600px;
+  margin: 50px auto;
+}
+
+
+
+button {
+  outline: 0;
+  height: 3rem;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  border-color: #009481;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 20px 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 400px;
+}
+
+.col1{
+  background: #00c7ae;
+}
+
+.col2{
+  padding: 30px;
+}
+
+.intro-button-container {
+  float: right;
+  padding-top: 200px;
+}
+
+.intro-subtitle {
+  font-size: 30px;
+  font-weight: 300;
 }

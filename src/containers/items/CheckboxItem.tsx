@@ -22,29 +22,6 @@ const CheckboxItem: React.FC<{ item: Item }> = ({ item }) => {
     }
   }, []);
 
-  // const onSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const answer: string[] = [];
-  //   checkItems.forEach((isChecked, name) => {
-  //     if (isChecked) {
-  //       answer.push(name);
-  //     }
-  //   });
-  //   if (!answer.length) {
-  //     return alert('하나 이상 선택해주세요!!');
-  //   }
-  //   dispatch({
-  //     type: SUBMIT_FORM,
-  //     data: {
-  //       id: item.itemId,
-  //       answer,
-  //     },
-  //   });
-  //   dispatch({
-  //     type: INCREASE_STEP,
-  //   });
-  // };
-
   const onCheckboxChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.name;
     const checked = e.target.checked;
@@ -68,8 +45,7 @@ const CheckboxItem: React.FC<{ item: Item }> = ({ item }) => {
   };
 
   return (
-    <>
-      <h2>{item.title}</h2>
+    <ul>
       {item.options.map(option => (
         <Checkbox
           key={`option.text${option.id}`}
@@ -78,7 +54,7 @@ const CheckboxItem: React.FC<{ item: Item }> = ({ item }) => {
           checked={checkItems.get(option.text) === true ? true : false}
         />
       ))}
-    </>
+    </ul>
   );
 };
 

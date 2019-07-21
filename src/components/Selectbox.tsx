@@ -11,7 +11,7 @@ interface Props {
 
 const Selectbox: React.SFC<Props> = ({ options, onChange, selected }) => {
   return (
-    <select onChange={onChange} defaultValue={selected}>
+    <select className="select-box" onChange={onChange} defaultValue={selected}>
       <option value="">선택해주세요.</option>
       {options.map(option => (
         <option key={option.id} value={option.text}>

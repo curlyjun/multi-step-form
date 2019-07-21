@@ -5,7 +5,7 @@ import { Item, formType, State } from '../types';
 
 const { CHECKBOX, RADIO, TEXTINPUT, SELECTBOX } = formType;
 
-const SelectFormType: React.FC<{ items: any }> = ({ items }) => {
+const SelectFormType: React.FC<{ items: Item[] }> = ({ items }) => {
   const { step } = useSelector((state: State) => state);
   if (items.length) {
     switch (items[step - 1].formType) {

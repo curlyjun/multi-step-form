@@ -1,0 +1,154 @@
+.form-container {
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.form-container h2 {
+  margin: 0 0 64px 0;
+  color: #3e3e3e;
+}
+
+.form-container li {
+  list-style: none;
+  padding: 15px 25px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.form-container li:last-child {
+  border-bottom: 0px;
+}
+
+.form-container ul {
+  padding: 0px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-next {
+  background: rgb(0, 199, 174);
+  border-radius: 3px;
+  color: white;
+}
+
+.button-submit {
+  border-radius: 3px;
+  background: skyblue;
+  color: white;
+}
+
+.button-previous {
+  color: rgb(0, 199, 174);
+  border: 1px solide #ccc;
+  background: white;
+  border-radius: 3px;
+}
+
+input[type='checkbox'] + label {
+  display: block;
+  cursor: pointer;
+  padding: 2px;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input[type='checkbox'] + label::before {
+  content: '\2714';
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  color: transparent;
+  transition: 0.2s;
+  margin-right: 20px;
+}
+
+input[type='checkbox']:checked + label:before {
+  background-color: #00c7ae;
+  border-color: #00c7ae;
+  color: white;
+}
+
+input[type='radio'] + label {
+  display: block;
+  cursor: pointer;
+  padding: 2px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+input[type='radio'] + label::before {
+  content: '\2714';
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  color: transparent;
+  transition: 0.2s;
+  margin-right: 20px;
+}
+
+input[type='radio']:checked + label:before {
+  background-color: #00c7ae;
+  border-color: #00c7ae;
+  color: white;
+}
+
+input[type='text'] {
+  height: 48px;
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  padding: 0 25px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  border-radius: 10px;
+  width: 100%;
+  height: 10px;
+  background: #e1e1e1;
+  margin-bottom: 40px;
+}
+
+.progress-bar div {
+  border-radius: 10px;
+  background-color: #00c7ae;
+  width: 10%;
+  height: 10px;
+  transition: 0.2s;
+}
+
+.select-box {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('../images/down-arrow.png') no-repeat 95%;
+  background-size: 10px;
+  color: #5a5a5a;
+  border: 1px solid #e1e1e1;
+  outline: none;
+  width:  100%;
+  height: 100%;
+  padding: 6px 30px;
+  font-size: 1rem;
+  border-radius: 0px;
+  margin-bottom: 40px;
+}

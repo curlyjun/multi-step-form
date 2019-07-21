@@ -8,15 +8,16 @@ interface Props {
 
 const Radio: React.SFC<Props> = ({ name, onChange, selected }) => {
   return (
-    <>
+    <li>
       <input
         type="radio"
         name={name}
         onChange={onChange}
         checked={selected === name}
+        id={name}
       />
-      <label>{name}</label>
-    </>
+      <label htmlFor={name}>{name}</label>
+    </li>
   );
 };
 

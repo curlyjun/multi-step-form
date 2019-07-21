@@ -8,15 +8,16 @@ interface Props {
 
 const Checkbox: React.FC<Props> = ({ name, checked, onChange }) => {
   return (
-    <>
+    <li className="li-checkbox">
       <input
+        id={name}
         type="checkbox"
         name={name}
         checked={checked}
         onChange={onChange}
       />
-      {name}
-    </>
+      <label htmlFor={name}>{name}</label>
+    </li>
   );
 };
 

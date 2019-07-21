@@ -30,8 +30,7 @@ const RadioItem: React.FC<{ item: Item }> = ({ item }) => {
   };
 
   return (
-    <>
-      <h2>{item.title}</h2>
+    <ul>
       {item.options.map(option => (
         <Radio
           key={option.text + option.id}
@@ -44,7 +43,7 @@ const RadioItem: React.FC<{ item: Item }> = ({ item }) => {
           }
         />
       ))}
-    </>
+    </ul>
   );
 };
 

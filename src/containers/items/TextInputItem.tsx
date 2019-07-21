@@ -10,7 +10,7 @@ const TextInputForm: React.FC<{ item: Item }> = ({ item }) => {
   const { items } = useSelector((state: State) => state.result);
   const { step } = useSelector((state: State) => state);
 
-  const onChangeTextInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChangeTextInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: ADD_ANSWER,
       data: {
@@ -21,13 +21,10 @@ const TextInputForm: React.FC<{ item: Item }> = ({ item }) => {
   };
 
   return (
-    <>
-      <h2>{item.title}</h2>
-      <TextInput
-        value={items[step - 1] ? items[step - 1].answer[0] : ''}
-        onChange={onChangeTextInput}
-      />
-    </>
+    <TextInput
+      value={items[step - 1] ? items[step - 1].answer[0] : ''}
+      onChange={onChangeTextInput}
+    />
   );
 };
 

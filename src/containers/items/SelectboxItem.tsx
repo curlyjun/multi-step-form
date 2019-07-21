@@ -32,7 +32,6 @@ const SelectboxForm: React.FC<{ item: Item }> = ({ item }) => {
 
   return (
     <>
-      <h2>{item.title}</h2>
       <Selectbox
         options={item.options}
         onChange={onChangeSelectbox}
