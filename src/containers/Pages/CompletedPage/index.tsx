@@ -20,7 +20,7 @@ const CompletedPage: React.FC<{}> = () => {
     });
 
     // console.log로 output
-    console.log(formatResult);
+    console.log(JSON.stringify(formatResult));
   }, [result.id, result.items]);
 
   return (
