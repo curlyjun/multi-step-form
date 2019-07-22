@@ -4,12 +4,12 @@
   appearance: none;
   background: url('../../images/down-arrow.png') no-repeat 95%;
   background-size: 10px;
-  color: #5a5a5a;
+  color: #6d6d6d;
   border: 1px solid #e1e1e1;
   outline: none;
   width:  100%;
   height: 100%;
-  padding: 6px 30px;
+  padding: 10px 30px;
   font-size: 1rem;
   border-radius: 0px;
 }
