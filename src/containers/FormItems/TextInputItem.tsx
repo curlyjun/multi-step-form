@@ -12,6 +12,15 @@ const TextInputForm: React.FC<{ item: Item }> = ({ item }) => {
 
   const onChangeTextInput = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.value === '') {
+        return dispatch({
+          type: ADD_ANSWER,
+          data: {
+            itemId: item.itemId,
+            answer: [],
+          },
+        });
+      }
       dispatch({
         type: ADD_ANSWER,
         data: {
